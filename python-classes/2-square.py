@@ -21,7 +21,8 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-        #!/usr/bin/python3
+
+#!/usr/bin/python3
 """Defines a class Square with size validation and an area method."""
 
 
@@ -52,7 +53,8 @@ class Square:
         """
         return self.__size ** 2
 
-    #!/usr/bin/python3
+
+#!/usr/bin/python3
 """Defines a class Square with a private size attribute, a getter and
 setter for size, and an area method.
 """
