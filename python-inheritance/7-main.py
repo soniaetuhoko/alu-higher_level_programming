@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # 7-main.py
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
@@ -22,4 +23,3 @@ try:
     bg.integer_validator("distance", -4)  # Raises ValueError: distance must be greater than 0
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
-

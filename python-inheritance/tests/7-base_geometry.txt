@@ -1,0 +1,27 @@
+# tests/7-base_geometry.txt
+
+# Test case 1: Valid integer values
+try:
+    bg = BaseGeometry()
+    bg.integer_validator("my_int", 12)  # Should pass without error
+    bg.integer_validator("width", 89)   # Should pass without error
+    print("Valid integer tests passed.")
+except Exception as e:
+    print(f"Error: {e}")
+
+# Test case 2: Invalid value (not an integer)
+try:
+    bg.integer_validator("name", "John")  # Should raise TypeError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")  # Expect: TypeError: name must be an integer
+
+# Test case 3: Invalid value (integer but <= 0)
+try:
+    bg.integer_validator("age", 0)  # Should raise ValueError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")  # Expect: ValueError: age must be greater than 0
+
+try:
+    bg.integer_validator("distance", -4)  # Should raise ValueError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")  # Expect: ValueError: distance must be greater than 0
