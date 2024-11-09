@@ -10,6 +10,7 @@ class BaseGeometry:
     Methods:
         area(self): Raises an Exception with the message 'area() is not implemented'.
         integer_validator(self, name, value): Validates value.
+
     """
 
     def area(self):
