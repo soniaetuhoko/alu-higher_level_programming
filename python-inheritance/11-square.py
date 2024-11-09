@@ -1,53 +1,29 @@
 #!/usr/bin/python3
-"""Module that defines the Square class, which inherits from Rectangle."""
+"""Define a Square class that inherits from Rectangle."""
 
-class BaseGeometry:
-    """BaseGeometry class with area method and integer_validator."""
-    
-    def area(self):
-        """Raises an Exception as area() is not implemented in BaseGeometry."""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates that the value is a positive integer."""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
-
-class Rectangle(BaseGeometry):
-    """Rectangle class inheriting from BaseGeometry."""
-    
-    def __init__(self, width, height):
-        """Initialize width and height after validation."""
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
-        self.__height = height
-
-    def area(self):
-        """Calculate the area of the rectangle."""
-        return self.__width * self.__height
-
-    def __str__(self):
-        """Return rectangle description."""
-        return f"[Rectangle] {self.__width}/{self.__height}"
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Square class inheriting from Rectangle, with custom string output."""
-    
-    def __init__(self, size):
-        """Initialize size after validation."""
-        self.integer_validator("size", size)
-        self.__size = size
-        super().__init__(size, size)
+    """A class Square that inherits from Rectangle.
+    """
 
-    def area(self):
-        """Return the area of the square."""
-        return self.__size * self.__size
+    def __init__(self, size):
+        """Initialize a square instance with a given size.
+
+        Args:
+            size (int): The size (side length) of the square.
+        """
+        super().integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
 
     def __str__(self):
-        """Return the square description."""
+        """Return an informal string representation of the square.
+        """
         return f"[Square] {self.__size}/{self.__size}"
+
+    def area(self):
+        """Calculate and return the area of the square.
+        """
+        return self.__size ** 2
