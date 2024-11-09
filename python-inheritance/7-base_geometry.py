@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# 7-base_geometry.py
+""" This module defines the BaseGeometry class with methods for area calculation and integer validation. """
+
 class BaseGeometry:
     def area(self):
         raise Exception("area() is not implemented")
