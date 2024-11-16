@@ -1,5 +1,2 @@
--- This statement selects the database to work with
-USE mysql;
-
--- This query lists all tables in the selected database (mysql)
+-- Write a script that lists the tables of a database in your MySQL server.
 SHOW TABLES;
